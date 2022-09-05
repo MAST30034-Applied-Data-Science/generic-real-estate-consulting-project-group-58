@@ -52,12 +52,11 @@ for page in N_PAGES:
 # for each url, scrape some basic metadata
 for property_url in url_links[1:]:
     bs_object = BeautifulSoup(requests.get(
-    url, headers=headers).text, "html.parser")
+    property_url, headers=headers).text, "html.parser")
     # looks for the header class to get property name
     property_metadata[property_url]['name'] = bs_object \
         .find("h1", {"class": "css-164r41r"}) \
         .text
-# 上面的这个.text删掉的话就不会报错，可能是和57行的.text冲突了，但是下面还是有问题
 
     # looks for the div containing a summary title for cost
     property_metadata[property_url]['cost_text'] = bs_object \
@@ -78,16 +77,27 @@ for property_url in url_links[1:]:
         )[0].split(',')
     ]
 
-    property_metadata[property_url]['rooms'] = [
-        re.findall(r'\d\s[A-Za-z]+', feature.text)[0] for feature in bs_object \
+    rooms_list = []
+    for feature in bs_object \
             .find("div", {"data-testid": "property-features"}) \
-            .findAll("span", {"data-testid": "property-features-text-container"})
-    ]
+            .findAll("span", {"data-testid": "property-features-text-container"}):
+        try:
+            rooms_list.append(re.findall(r'\d\s[A-Za-z]+', feature.text)[0])
+        except IndexError:
+            pass
+
+    property_metadata[property_url]['rooms'] = rooms_list
+
+    # property_metadata[property_url]['rooms'] = [
+    #     re.findall(r'\d\s[A-Za-z]+', feature.text)[0] for feature in bs_object \
+    #         .find("div", {"data-testid": "property-features"}) \
+    #         .findAll("span", {"data-testid": "property-features-text-container"})
+    # ]
 
     property_metadata[property_url]['desc'] = re \
         .sub(r'<br\/>', '\n', str(bs_object.find("p"))) \
         .strip('</p>')
 
 # output to example json in data/raw/
-with open('../data/raw/example.json', 'w') as f:
+with open('data/raw/example.json', 'w') as f:
     dump(property_metadata, f)
