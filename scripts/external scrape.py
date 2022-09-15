@@ -3,7 +3,7 @@ import requests
 import os
 import re
 import csv
-# from zipfile import ZipFile
+from zipfile import ZipFile
 import zipfile
 import json
 
@@ -22,7 +22,7 @@ output = open('data/raw/SA2.zip', 'wb')
 output.write(resp.content)
 output.close()
 #directory = "data/raw/SA2"
-# Parent Directory path 
+# Parent Directory path
 # parent_dir = "data/raw"
 # = os.path.join(parent_dir, directory) 
 path = "data/raw/SA2"
@@ -39,21 +39,39 @@ os.remove("data/raw/SA2.zip")
 dls = "http://data.ptv.vic.gov.au/downloads/gtfs.zip"
 resp = requests.get(dls)
 # upload gtfs.zip
-output = open('data/raw/gtfs.zip', 'wb')
+output = open('../data/raw/gtfs.zip', 'wb')
 output.write(resp.content)
 output.close()
 # directory = "data/raw/ptv"
 # Parent Directory path 
-path = "data/raw/ptv"
+path = "../data/raw/ptv"
 # path = os.path.join(parent_dir, directory) 
 #create folder
 os.mkdir(path) 
 # save zip to a folder
-with zipfile.ZipFile("data/raw/gtfs.zip", mode="r") as archive:
-    archive.extractall("data/raw/ptv")
+with zipfile.ZipFile("../data/raw/gtfs.zip", mode="r") as archive:
+    archive.extractall("../data/raw/ptv")
     archive.close()
 # remove gtfs.zip
-os.remove("data/raw/gtfs.zip")
+os.remove("../data/raw/gtfs.zip")
+###ptv unzip 2
+with zipfile.ZipFile("../data/raw/ptv/2/google_transit.zip", mode="r") as archive:
+    archive.extractall("../data/raw/ptv/2")
+    archive.close()
+# remove google_transit.zip
+os.remove("../data/raw/ptv/2/google_transit.zip")
+###ptv unzip 3
+with zipfile.ZipFile("../data/raw/ptv/3/google_transit.zip", mode="r") as archive:
+    archive.extractall("../data/raw/ptv/3")
+    archive.close()
+# remove google_transit.zip
+os.remove("../data/raw/ptv/3/google_transit.zip")
+###ptv unzip 4
+with zipfile.ZipFile("../data/raw/ptv/4/google_transit.zip", mode="r") as archive:
+    archive.extractall("../data/raw/ptv/4")
+    archive.close()
+# remove google_transit.zip
+os.remove("../data/raw/ptv/4/google_transit.zip")
 
 ########################################   school locations  ########################################
 dls = "https://www.education.vic.gov.au/Documents/about/research/datavic/dv309_schoollocations2021.csv"
