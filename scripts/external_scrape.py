@@ -10,7 +10,7 @@ import json
 ########################################   population  ########################################
 dls = "https://www.abs.gov.au/statistics/people/population/regional-population/2021/32180DS0001_2001-21.xlsx"
 resp = requests.get(dls)
-output = open('data/raw/population.xlsx', 'wb')
+output = open('../data/raw/population.xlsx', 'wb')
 output.write(resp.content)
 output.close()
 
@@ -18,22 +18,22 @@ output.close()
 dls = "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026/access-and-downloads/digital-boundary-files/SA2_2021_AUST_SHP_GDA2020.zip"
 resp = requests.get(dls)
 # upload SA2.zip
-output = open('data/raw/SA2.zip', 'wb')
+output = open('../data/raw/SA2.zip', 'wb')
 output.write(resp.content)
 output.close()
 #directory = "data/raw/SA2"
 # Parent Directory path
 # parent_dir = "data/raw"
 # = os.path.join(parent_dir, directory) 
-path = "data/raw/SA2"
+path = "../data/raw/SA2"
 #create folder
 #os.mkdir(path) 
 # save zip to a folder
-with zipfile.ZipFile("data/raw/SA2.zip", mode="r") as archive:
-    archive.extractall("data/raw/SA2")
+with zipfile.ZipFile("../data/raw/SA2.zip", mode="r") as archive:
+    archive.extractall("../data/raw/SA2")
     archive.close()
 # remove SA2.zip
-os.remove("data/raw/SA2.zip")
+os.remove("../data/raw/SA2.zip")
 
 ########################################   ptv  ########################################
 dls = "http://data.ptv.vic.gov.au/downloads/gtfs.zip"
@@ -76,13 +76,13 @@ os.remove("../data/raw/ptv/4/google_transit.zip")
 ########################################   school locations  ########################################
 dls = "https://www.education.vic.gov.au/Documents/about/research/datavic/dv309_schoollocations2021.csv"
 resp = requests.get(dls)
-output = open('data/raw/school2021.csv', 'wb')
+output = open('../data/raw/school2021.csv', 'wb')
 output.write(resp.content)
 output.close()
 
 ########################################   hospital locations  ########################################
 dls = "https://data.humdata.org/dataset/a5221b34-8ed4-4e19-88c9-b195c13502b6/resource/6df0921e-d676-4c36-8229-c65cea510217/download/australia.csv"
 resp = requests.get(dls)
-output = open('data/raw/hospital2021.csv', 'wb')
+output = open('../data/raw/hospital2021.csv', 'wb')
 output.write(resp.content)
 output.close()
