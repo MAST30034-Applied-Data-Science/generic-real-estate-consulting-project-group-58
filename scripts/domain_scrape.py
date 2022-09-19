@@ -17,15 +17,19 @@ from urllib.request import urlopen
 headers = {"User-Agent": "Mozilla/5.0 (X11; CrOS x86_64 12871.102.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.141 Safari/537.36"}
 # constants
 BASE_URL = "https://www.domain.com.au"
-N_PAGES = range(1, 51) # update this to your liking
+#N_PAGES = range(1, 51) # update this to your liking
+Postcode = range(3000, 4000)
+
 
 ########################################  domain website scraping  ########################################
 # begin code
 url_links = []
 property_metadata = defaultdict(dict)
 # generate list of urls to visit
-for page in N_PAGES:
-    url = BASE_URL + f"/rent/melbourne-region-vic/?sort=price-desc&page={page}"
+for postcode in Postcode:
+    #url = BASE_URL + f"/rent/melbourne-region-vic/?sort=price-desc&page={1}"
+
+    url = BASE_URL + f"/rent/?excludedeposittaken=1&postcode={postcode}"
     bs_object = BeautifulSoup(requests.get(
         url, headers=headers).text, "html.parser")
     # find the unordered list (ul) elements which are the results, then
@@ -86,5 +90,5 @@ for property_url in url_links[1:]:
         .sub(r'<br\/>', '\n', str(bs_object.find("p"))) \
         .strip('</p>')
 # output to example json in data/raw/
-with open('../data/raw/example.json', 'w') as f:
+with open('../data/raw/domain1.json', 'w') as f:
     dump(property_metadata, f)
