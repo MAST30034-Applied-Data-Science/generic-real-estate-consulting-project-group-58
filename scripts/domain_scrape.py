@@ -27,14 +27,15 @@ url_links = []
 property_metadata = defaultdict(dict)
 # generate list of urls to visit
 for postcode in Postcode:
-    #url = BASE_URL + f"/rent/melbourne-region-vic/?sort=price-desc&page={1}"
+    #url = BASE_URL + f"/rent/melbourne-region-vic/?sort=price-desc&page={page}"
 
     url = BASE_URL + f"/rent/?excludedeposittaken=1&postcode={postcode}"
     bs_object = BeautifulSoup(requests.get(
         url, headers=headers).text, "html.parser")
     # find the unordered list (ul) elements which are the results, then
     # find all href (a) tags that are from the base_url website.
-    index_links = bs_object \
+    try:
+        index_links = bs_object \
         .find(
             "ul",
             {"data-testid": "results"}
@@ -43,10 +44,14 @@ for postcode in Postcode:
             "a",
             href=re.compile(f"{BASE_URL}/*") # the `*` denotes wildcard any
         )
-    for link in index_links:
+        for link in index_links:
         # if its a property address, add it to the list
-        if 'address' in link['class']:
-            url_links.append(link['href'])
+            if 'address' in link['class']:
+                url_links.append(link['href'])
+    except AttributeError:
+        pass
+    
+    
 # for each url, scrape some basic metadata
 for property_url in url_links[1:]:
     bs_object = BeautifulSoup(requests.get(
@@ -90,5 +95,5 @@ for property_url in url_links[1:]:
         .sub(r'<br\/>', '\n', str(bs_object.find("p"))) \
         .strip('</p>')
 # output to example json in data/raw/
-with open('../data/raw/domain1.json', 'w') as f:
+with open('data/raw/domain1.json', 'w') as f:
     dump(property_metadata, f)
