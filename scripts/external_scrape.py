@@ -86,3 +86,10 @@ resp = requests.get(dls)
 output = open('../data/raw/hospital2021.csv', 'wb')
 output.write(resp.content)
 output.close()
+
+########################################   income locations  ########################################
+dls = "https://www.abs.gov.au/AUSSTATS/subscriber.nsf/log?openagent&14100do0004_2014-19.xlsx&1410.0&Data%20Cubes&63757E101C2DA1A1CA2586290010B831&0&2014-19&24.11.2020&Latest"
+resp = requests.get(dls)
+output = open('../data/raw/income.xlsx', 'wb')
+output.write(resp.content)
+output.close()
