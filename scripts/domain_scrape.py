@@ -95,5 +95,5 @@ for property_url in url_links[1:]:
         .sub(r'<br\/>', '\n', str(bs_object.find("p"))) \
         .strip('</p>')
 # output to example json in data/raw/
-with open('data/raw/domain1.json', 'w') as f:
+with open('../data/raw/domain1.json', 'w') as f:
     dump(property_metadata, f)
