@@ -3,7 +3,7 @@
 - Name2: Borui Zou, Ruiyi Hao, Yinuo Sun, Yizhu Zhu, Zixuan Lin 
 - Student IDs: 1173911, 1133452, 1045919, 1174257, 1135311
 
-**Research Goal:** This research goal is to predict the rental prices in Victoria region published from Domain. The project chooses the 'Simply Liner Regression(LR)' as the baseline model and 'Generalized Linear Regression(GLM)' as an extension of 'LR', and the compares the previous statistical models with machine learning models, including 'XGB', 'GradientBoosting', 'RandomForest', 'Adaboost', 'Artificial Neural Networks(ANA)'.
+**Research Goal:** This research goal is to predict the rental prices in Victoria region published from Domain. The project chooses the 'Simply Liner Regression(LR)' as the baseline model and 'Generalized Linear Regression(GLM)' as an extension of 'LR', and the compares the previous statistical models with machine learning models, including 'XGB', 'GradientBoosting', 'RandomForest', 'Adaboost', 'Artificial Neural Networks(ANN)'.
 
 **Timeline:** The timelines for the research features are from: .
 
