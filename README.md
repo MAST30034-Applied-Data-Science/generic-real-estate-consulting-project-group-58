@@ -8,10 +8,10 @@
 **Timeline:** The timelines for the research features are from: .
 
 To run the pipeline, please visit the `notebook` directory and run the files in order:
-1. 'domain_scrapy.py/scripts', 'external_scrapy.py/scripts': For raw internal and external data downloading from website and data saving into `data/raw`.
+1. 'domain_scrapy.py/scripts', 'external_scrapy.py/scripts': For raw internal and external data downloading from website and data saving into 'data/raw'.
 2. 'distance.py/scripts', 'non_inco_distance.py/scripts': For distance to Melbourne CBM data downloading by openrouteservice andd data saving into 'data/curated'.
-3. 'Pre-processing.ipynb/notebooks`: For data extracting, data cleansing, converting features from 'SA2' to 'Postcode(suburb)', and data aggregation.
-4. 'Preliminary Analysis.ipynb/notebooks:': For feature distribution analysis and checking outliers.
+3. 'Pre-processing.ipynb/notebooks': For data extracting, data cleansing, converting features from 'SA2' to 'Postcode(suburb)', and data aggregation.
+4. 'Preliminary Analysis.ipynb/notebooks': For feature distribution analysis and checking outliers.
 5. 'Split_train_valid.ipynb.notebooks': For spliting tarin, valid, predict dataset in to 'data/curated'.
 6. 'Visualisation.ipynb/notebooks': For geospatial visualisation.
 7. 'Baseline_model.ipynb/models': For modeling 'LR'.
