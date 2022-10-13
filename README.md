@@ -15,7 +15,7 @@
 To run the pipeline, please visit the `notebooks`, `scripts` as well as `models` directories and run the files in order:
 1.`external_scrape.py/scripts`: For raw external data downloading from websites and data saving into `data/raw`.
 2. `Pre-processing.ipynb/notebooks`: For data reading, data cleaning, converting features from 'SA2' to 'Postcode(suburb)', and data aggregation.
-23. `Preliminary Analysis.ipynb/notebooks`: For general analysis including checking distribution of attributes, correlation between attributes as well as outliers detection and removal.
+3. `Preliminary Analysis.ipynb/notebooks`: For general analysis including checking distribution of attributes, correlation between attributes as well as outliers detection and removal.
 4. `Split_train_valid.ipynb.notebooks`: For spliting tarin, valid, predict dataset, data saving in to `data/curated`.
 5. `Visualisation.ipynb/notebooks`,`Visualisation2.ipynb/notebooks`: For geospatial visualisation.
 6. `Baseline_model.ipynb/models`: For modeling 'LR'.
