@@ -13,7 +13,7 @@
 **Timeline:** The timeline for the research is from now to 3 years later, 2022-2025. All data are collected for year 2022, rental predictions are based on predicted data for 2025. However, data for some features might not exists for 2022, so some features without current data are predicted according to the historical data.
  
 To run the pipeline, please visit the `notebooks`, `scripts` as well as `models` directories and run the files in order:
-1.`external_scrape.py/scripts`: For raw external data downloading from websites and data saving into `data/raw`.
+1. `external_scrape.py/scripts`: For raw external data downloading from websites and data saving into `data/raw`.
 2. `Pre-processing.ipynb/notebooks`: For data reading, data cleaning, converting features from 'SA2' to 'Postcode(suburb)', and data aggregation.
 3. `Preliminary Analysis.ipynb/notebooks`: For general analysis including checking distribution of attributes, correlation between attributes as well as outliers detection and removal.
 4. `Split_train_valid.ipynb.notebooks`: For spliting tarin, valid, predict dataset, data saving in to `data/curated`.
