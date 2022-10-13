@@ -24,7 +24,7 @@ To run the pipeline, please visit the `notebooks`, `scripts` as well as `models`
 
  NB: 
  1. `domain_scrape.py/scripts` was used to download internal data from Domain URL and to save the data into `data/raw`. However, due to website changes,
- there is an error reported begining this week. Also because of a long run time, Domain data is save as [domain1.json] in `data/raw`.
+ there is an error reported begining this week. Also because of a long run time, Domain data is save as `domain1.json` in `data/raw`.
  2. `distance.py/scripts`, `non_inco_distance.py/scripts`: For distance to Melbourne CBM data downloading by openrouteservice and data saving into
  `data/curated`. (Is very time consuming, costing over 10 hrs. Therefore, we do not recommend to run the files because the data has already saved in `Pre
  processing.ipynb/notebooks`, the distance lists for data with income [distance_list] and without income [non_inco_distance_list] can also be found in data
