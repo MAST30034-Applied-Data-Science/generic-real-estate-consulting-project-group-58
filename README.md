@@ -14,7 +14,7 @@
 
 To run the pipeline, please visit the `notebooks`, `scripts` as well as `models` directories and run the files in order:
 1. `domain_scrape.py/scripts`, `external_scrape.py/scripts`: For raw internal and external data downloading from websites and data saving into `data/raw`.
-2. `distance.py/scripts`, `non_inco_distance.py/scripts`: For distance to Melbourne CBM data downloading by openrouteservice and data saving into `data/curated`. (Is very time consuming, costing over 10 hrs. Therefore, we do not recommend to run the files because the data has already saved in `Pre-processing.ipynb/notebooks`)
+2. `distance.py/scripts`, `non_inco_distance.py/scripts`: For distance to Melbourne CBM data downloading by openrouteservice and data saving into `data/curated`. (Is very time consuming, costing over 10 hrs. Therefore, we do not recommend to run the files because the data has already saved in `Pre-processing.ipynb/notebooks`, the distance lists for data with income [distance_list] and without income [non_inco_distance_list] can also be found in data folder, outside the raw and curated directories)
 3. `Pre-processing.ipynb/notebooks`: For data reading, data cleaning, converting features from 'SA2' to 'Postcode(suburb)', and data aggregation.
 4. `Preliminary Analysis.ipynb/notebooks`: For general analysis including checking distribution of attributes, correlation between attributes as well as outliers detection and removal.
 5. `Split_train_valid.ipynb.notebooks`: For spliting tarin, valid, predict dataset, data saving in to `data/curated`.
