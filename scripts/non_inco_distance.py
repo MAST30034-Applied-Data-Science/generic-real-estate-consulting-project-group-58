@@ -4,12 +4,13 @@
 import openrouteservice as ors
 import time
 import csv
+import os
 
 gpd_non_inco = pd.read_csv('../data/curated/domain_non_income.csv')
 
 ####### 0--860 #######
 
-ors_key = "5b3ce3597851110001cf6248096baaa368004ce99a11a6c3920705db"
+ors_key = os.environ.get('APIKEY5')
 client = ors.Client(key=ors_key)
 
 non_inco_distance = []
