@@ -22,7 +22,7 @@ To run the pipeline, please visit the `notebooks`, `scripts` as well as `models`
 7. `glm.ipynb/models`: For modeling 'GLM'.
 8. `ML_model.ipynb/models`: For modeling machine learning models.
 
- NB: 
+ **NB:**
  1. `domain_scrape.py/scripts` was used to download internal data from Domain URL and to save the data into `data/raw`. However, due to website changes,
  there is an error reported begining this week. Also because of a long run time, Domain data is save as `domain1.json` in `data/raw`.
  2. `distance.py/scripts`, `non_inco_distance.py/scripts`: For distance to Melbourne CBM data downloading by openrouteservice and data saving into
