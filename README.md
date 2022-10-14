@@ -1,6 +1,6 @@
 # MAST30034 Project 2, 'Generic Real Estate Consulting Project', README.md
 ## Group 58
-- Name2: Borui Zou, Ruiyi Hao, Yinuo Sun, Yizhu Zhu, Zixuan Lin 
+- Names: Borui Zou, Ruiyi Hao, Yinuo Sun, Yizhu Zhu, Zixuan Lin 
 - Student IDs: 1173911, 1133452, 1045919, 1174257, 1135311
 
 **Research Goal:** This research aims to predict 2025 rental prices in Victoria based on current (2022) data published from Domain rental website together with some other open data sources. This project chooses the 'Simply Liner Regression(LR)' as the baseline model and 'Generalized Linear Regression(GLM)' as an extension of 'LR', and compares these statistical models with machine learning and neural network models, including 'XGB', 'GradientBoosting', 'RandomForest', 'Adaboost', 'Artificial Neural Networks(ANN)'. Finally, we provide solutions based on our predicted rental prices to the 3 main questions:
