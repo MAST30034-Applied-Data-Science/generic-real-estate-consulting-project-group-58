@@ -21,6 +21,7 @@ To run the pipeline, please visit the `notebooks`, `scripts` as well as `models`
 6. `Baseline_model.ipynb/models`: For modeling 'LR'.
 7. `glm.ipynb/models`: For modeling 'GLM'.
 8. `ML_model.ipynb/models`: For modeling machine learning models.
+9. `summaryNotebook.ipynb/notebooks`: This file is a summary of the process excuted by the above notebooks. In summary notebook, the process of details is ignored, while keeping the kep steps to give a broad idea of the overall flow of our project covering data collection, pre-processing, assumptions, visualization, spliting train and validation, modeling, final results and limitation analysis.
 
  **NB:**
  1. `domain_scrape.py/scripts` was used to download internal data from Domain URL and to save the data into `data/raw`. However, due to website changes,
